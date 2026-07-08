@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_17_144510) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_08_153052) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "fuzzystrmatch"
   enable_extension "hstore"
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -541,7 +542,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_17_144510) do
     t.datetime "created_at", null: false
     t.integer "created_by_id", null: false
     t.text "error"
-    t.string "name_type", null: false
     t.datetime "onboarded_at"
     t.integer "onboarded_organization_id"
     t.string "organization_handle", null: false
